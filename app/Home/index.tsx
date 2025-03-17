@@ -1,4 +1,4 @@
-import { Text, StyleSheet, View, TouchableOpacity, Button } from "react-native";
+import { Text, StyleSheet, View, TouchableOpacity, Button, StatusBar, ScrollView } from "react-native";
 
 
 
@@ -6,6 +6,7 @@ import {LinearGradient} from 'expo-linear-gradient';
 
 export default function Home() {
   return (
+    <ScrollView showsVerticalScrollIndicator={false}>
     <LinearGradient style={styles.container}
         colors={["#281483", "#8F6ED5", "#D782D9"]}
         
@@ -62,6 +63,7 @@ export default function Home() {
 
       
     </LinearGradient>
+    </ScrollView>
   );
 }
 
