@@ -5,8 +5,8 @@ import Routes from './Routes';
 
 export default function app() {
  return (
-   <View>
+  
     <Routes/>
-  </View>
+  
   );
 }

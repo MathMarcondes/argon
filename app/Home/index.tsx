@@ -1,12 +1,15 @@
-import { Text, StyleSheet, View, TouchableOpacity, Button, StatusBar, ScrollView } from "react-native";
+import { Text, StyleSheet, View, TouchableOpacity, StatusBar } from "react-native";
 
+import { useNavigation } from "@react-navigation/native";
 
 
 import {LinearGradient} from 'expo-linear-gradient';
 
 export default function Home() {
+  const navigation = useNavigation();
+
   return (
-    <ScrollView showsVerticalScrollIndicator={false}>
+    
     <LinearGradient style={styles.container}
         colors={["#281483", "#8F6ED5", "#D782D9"]}
         
@@ -56,14 +59,16 @@ export default function Home() {
           <Text style={{
             fontWeight: 'bold',
             marginStart: '38%'
-            }}>Get Started</Text>
+            }}
+            
+          onPress={() => navigation.navigate('CreateAccount')}>Get Started</Text>
       </TouchableOpacity>
 
       
 
       
     </LinearGradient>
-    </ScrollView>
+
   );
 }
 
