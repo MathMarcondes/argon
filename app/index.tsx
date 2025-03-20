@@ -1,5 +1,5 @@
 import { View, Text,  } from 'react-native';
-import Home from './Home';
+
 import Routes from './Routes';
 
 

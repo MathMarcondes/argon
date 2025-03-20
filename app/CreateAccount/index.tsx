@@ -3,9 +3,8 @@ import Fontisto from '@expo/vector-icons/Fontisto';
 import AntDesign from '@expo/vector-icons/AntDesign';
 import { CheckBoxBase } from '@react-native-community/checkbox';
 import { useState } from 'react'
-
+import { useNavigation } from 'expo-router';
 import Checkbox from 'expo-checkbox';
-
 
 
 
@@ -14,6 +13,7 @@ import Checkbox from 'expo-checkbox';
 export default function CreateAccount() {
 
     const [isChecked, setChecked] = useState(false);
+    const navigation = useNavigation();
 
 
     return(
@@ -39,15 +39,15 @@ export default function CreateAccount() {
                     </Text>
                     
                     <TextInput style={{backgroundColor: '#FFFFFF', borderRadius: 10, marginStart: '5%', marginEnd: '10%', marginTop: '5%'}}>
-                        name
+                        Name
                     </TextInput>
 
                     <TextInput style={{backgroundColor: '#FFFFFF', borderRadius: 10, marginStart: '5%', marginEnd: '10%', marginTop: '5%'}}>
-                        name
+                        Email
                     </TextInput>
 
                     <TextInput style={{backgroundColor: '#FFFFFF', borderRadius: 10, marginStart: '5%', marginEnd: '10%', marginTop: '5%'}}>
-                        name
+                        Password
                     </TextInput>
 
                 <Text style={{marginStart: '5%', marginTop: '5%'}}>password strenght: <Text style={{color: '#2DCE89', fontWeight: 'bold'}}>strong</Text> </Text>
@@ -62,8 +62,9 @@ export default function CreateAccount() {
                         
                         <Text style={{marginTop: '5%', marginStart: '5%'}}>I agree with the <Text style={{color: '#5E72E4'}}>Privice Pollyce</Text></Text>
                     </View>
-                <TouchableOpacity activeOpacity={0.9}  style={styles.botao}>
-                    <Text style={{fontSize: 20, color:'#fff', paddingBottom: 15, alignContent: 'center'}}>Create Account</Text>
+                <TouchableOpacity activeOpacity={0.9}  style={styles.botao}
+                onPress={() => navigation.navigate('Home')}>
+                    <Text style={{fontSize: 20, color:'#fff', paddingBottom: 18, alignContent: 'center'}}>Create Account</Text>
                 </TouchableOpacity>
 
                     
@@ -140,6 +141,7 @@ const styles = StyleSheet.create({
         marginTop: '15%',
         marginStart: '20%',
         marginEnd: '20%',
+        marginBottom: '15%',
         alignContent: 'center',
         alignItems: 'center',
         paddingTop: '20',
